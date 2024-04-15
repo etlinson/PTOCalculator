@@ -11,7 +11,7 @@ def addVacation(vacationDates, date1, date2):
     vacationDates.append((datetime.strptime(date1, "%m-%d-%Y"), datetime.strptime(date2, "%m-%d-%Y")))
 
 
-def main(arg):
+def main2(arg):
     # Setup variables
     accrualPerPeriod = 4.616
     startingPTO = 51.088  # MUST BE TOTAL AS OF THE WEEK BEFORE THE BEGIN DATE

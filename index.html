@@ -6,17 +6,42 @@
   <script type="module" src="https://pyscript.net/releases/2024.3.2/core.js"></script>
 </head>
 <body>
-  <h1>test</h1>
-  <!-- start date and end date -->
-  <!-- total hours at start date -->
-  <!-- when new hours are earned (select input: weekly, biweekly, monthly) -->
-  <!-- what date hours are earned next (if monthly, don't allow 29, 30, or 31) -->
-  <!-- how many hours user earns each period -->
-  <!-- holidays user gets -->
-  <!-- vacations (start-end) user plans on taking -->
-  <!-- check that all inputs are valid before running code -->
-  <form></form>
-  <button id="test" py-click="main">test</button>
+  <h1>PTO Calculator</h1>
+
+  <form>
+    <!-- start date and end date -->
+    <label for="startDate">What is the date range you want to calculate PTO for?</label>
+    <input id="startDate" type="date">
+    <input id="endDate" type="date">
+    <br>
+    <!-- total hours at start date -->
+    <label for="startingHours">How many hours are you starting with?</label>
+    <input id="startingHours" type="number" min="0">
+    <br>
+    <!-- when new hours are earned (select input: weekly, biweekly, monthly) -->
+    <label for="period">How often do you earn PTO?</label>
+    <select id="period">
+      <option value="weekly">Weekly</option>
+      <option value="biweekly">Biweekly</option>
+      <option value="monthly">Monthly</option>
+    </select>
+    <br>
+    <!-- what date hours are earned next (if monthly, don't allow 29, 30, or 31) -->
+    <label for="nextEarningDate">When do you earn PTO next?</label>
+    <input id="nextEarningDate" type="date">
+    <br>
+    <!-- how many hours user earns each period -->
+    <label for="hoursPerPeriod">How many hours do you earn per period?</label>
+    <input id="hoursPerPeriod" type="number" min="0.1">
+    <br>
+    <!-- holidays user gets -->
+    <!-- vacations (start-end) user plans on taking -->
+  </form>
+
+  <button py-click="main">Calculate</button>
+
   <div id="output"></div>
-  <script type="py" src="./scripts/CarlyPTOCalculator.py" config="./pyscript.json"></script>
+
+  <script src="index.js"></script>
+  <script type="py" src="./scripts/main.py" config="./pyscript.json"></script>
 </body>
